@@ -7,4 +7,5 @@ url pattern / syntax :
 '''
 urlpatterns = [
     path('', home, name='home'),
+    #path
 ]
