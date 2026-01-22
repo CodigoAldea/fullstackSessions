@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from exptracker.models import expense
 
 def home(request):
@@ -19,3 +19,10 @@ def home(request):
         )
         return render(request, 'home.html', {'data' : data, 'total': total, 'cat': cat})
     return render(request, 'home.html', {'data' : data, 'total': total, 'cat': cat})
+
+
+# view for deletion 
+def deleteexp(request, id):
+    data = expense.objects.get(id=id)
+    data.delete()
+    return redirect('home')

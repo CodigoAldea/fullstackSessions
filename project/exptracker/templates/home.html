@@ -38,7 +38,7 @@
                 <h2>Expense list </h2>
                 <ul>
                     {% for i in data %}
-                        <li>{{i.date}} | {{i.category}} | {{i.description}} | {{i.amount}}</li>
+                        <li>{{i.date}} | {{i.category}} | {{i.description}} | {{i.amount}} <a href="{% url "del" i.id %}" class="btn btn-danger"> Delete</a></li>
                     {% endfor %}
                 </ul>
             </div>

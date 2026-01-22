@@ -1,5 +1,5 @@
 from django.urls import path, include
-from exptracker.views import home
+from exptracker.views import home , deleteexp
 
 '''
 url pattern / syntax : 
@@ -7,5 +7,6 @@ url pattern / syntax :
 '''
 urlpatterns = [
     path('', home, name='home'),
+    path('delete/<int:id>',deleteexp, name='del')
     #path
 ]
