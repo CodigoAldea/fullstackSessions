@@ -14,10 +14,11 @@
                 <h2>Form</h2>
                 <form method="POST">
                     {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Category</label>
-                        <input type="text" class="form-control" name='category'>
-                    </div>
+                    <select class="form-select" aria-label="Default select example" name='category'>
+                        {% for value, label in cat %}
+                            <option value="{{ value }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Description</label>
                         <input type="text" class="form-control" name='description'>
